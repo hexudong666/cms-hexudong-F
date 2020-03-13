@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hexudong.cms.dao.CollectMapper" >
+	<select id="select" resultType="Collect">
+		SELECT * FROM cms_collect
+	</select>
+	<select id="selectCellects" resultType="Collect" >
+		SELECT * FROM cms_collect WHERE user_id=#{id}
+	</select>
+	<select id="selectText" resultType="Collect" >
+		SELECT * FROM cms_collect WHERE text=#{text} and user_id=${integer}
+	</select>
+	<delete id="delete">
+		DELETE FROM cms_collect WHERE id=#{id}
+	</delete>
+	<insert id="add">
+		INSERT INTO cms_collect(text,url,created,user_id)VALUES 
+		(#{text},#{url},#{created},#{user_id})
+	</insert>
+	<update id="update">
+		UPDATE cms_collect
+		SET text=#{text},url=#{url},created=#{created},user_id=#{user_id} 
+		WHERE id=#{id}
+	</update>
+</mapper>
