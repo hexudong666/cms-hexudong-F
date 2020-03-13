@@ -64,7 +64,7 @@
  <!--6、 配置事务 transaction-manager:表示关联的事务管理器是谁 -->
 	<tx:advice transaction-manager="transactionManager"
 		id="txAdvice">
-		<!-- 事务属性配置 -->
+		<!-- 事务属性配置 -->   
 		<tx:attributes>
 			<!-- 以find.select get开头的方法为只读事务，用来提高数据库的性能 -->
 			<tx:method name="find*" read-only="true" />
